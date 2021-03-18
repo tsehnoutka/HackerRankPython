@@ -1,13 +1,14 @@
 if __name__ == '__main__':
-    x = int(input())
-    y = int(input())
-    z = int(input())
-    n = int( input())
+    n = int(raw_input())
+    arr = map(int, raw_input().split())
+    arr.sort()
     
-    listijk = []
-    for a in range(x+1):    
-        for b in range(y+1):    
-            for c in range(z+1):
-                if ( a+b+c !=n):
-                    listijk.append([a,b,c])
-    print(listijk)
+    i = len(arr)-1
+    max = arr[i]
+    found = False
+    while i >=0 and not found:
+        if max > arr[i]:
+            found =True
+        else:
+            i -= 1
+    print (arr[i])
